@@ -1,0 +1,14 @@
+D:\Project\graduationProject\webservice\bin\Debug\netcoreapp2.1\WebService.deps.json
+D:\Project\graduationProject\webservice\bin\Debug\netcoreapp2.1\WebService.runtimeconfig.json
+D:\Project\graduationProject\webservice\bin\Debug\netcoreapp2.1\WebService.runtimeconfig.dev.json
+D:\Project\graduationProject\webservice\bin\Debug\netcoreapp2.1\WebService.dll
+D:\Project\graduationProject\webservice\bin\Debug\netcoreapp2.1\WebService.pdb
+D:\Project\graduationProject\webservice\obj\Debug\netcoreapp2.1\WebService.csprojAssemblyReference.cache
+D:\Project\graduationProject\webservice\obj\Debug\netcoreapp2.1\WebService.csproj.CoreCompileInputs.cache
+D:\Project\graduationProject\webservice\obj\Debug\netcoreapp2.1\WebService.RazorAssemblyInfo.cache
+D:\Project\graduationProject\webservice\obj\Debug\netcoreapp2.1\WebService.RazorAssemblyInfo.cs
+D:\Project\graduationProject\webservice\obj\Debug\netcoreapp2.1\WebService.AssemblyInfoInputs.cache
+D:\Project\graduationProject\webservice\obj\Debug\netcoreapp2.1\WebService.AssemblyInfo.cs
+D:\Project\graduationProject\webservice\obj\Debug\netcoreapp2.1\WebService.RazorTargetAssemblyInfo.cache
+D:\Project\graduationProject\webservice\obj\Debug\netcoreapp2.1\WebService.dll
+D:\Project\graduationProject\webservice\obj\Debug\netcoreapp2.1\WebService.pdb
