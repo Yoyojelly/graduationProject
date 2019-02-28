@@ -1,0 +1,17 @@
+d:\Project\graduationProject\WebService.Test\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+d:\Project\graduationProject\WebService.Test\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+d:\Project\graduationProject\WebService.Test\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+d:\Project\graduationProject\WebService.Test\bin\Debug\netcoreapp2.1\WebService.Test.deps.json
+d:\Project\graduationProject\WebService.Test\bin\Debug\netcoreapp2.1\WebService.Test.runtimeconfig.json
+d:\Project\graduationProject\WebService.Test\bin\Debug\netcoreapp2.1\WebService.Test.runtimeconfig.dev.json
+d:\Project\graduationProject\WebService.Test\bin\Debug\netcoreapp2.1\WebService.Test.dll
+d:\Project\graduationProject\WebService.Test\bin\Debug\netcoreapp2.1\WebService.Test.pdb
+d:\Project\graduationProject\WebService.Test\bin\Debug\netcoreapp2.1\webservice.dll
+d:\Project\graduationProject\WebService.Test\bin\Debug\netcoreapp2.1\webservice.pdb
+d:\Project\graduationProject\WebService.Test\obj\Debug\netcoreapp2.1\WebService.Test.csprojAssemblyReference.cache
+d:\Project\graduationProject\WebService.Test\obj\Debug\netcoreapp2.1\WebService.Test.csproj.CoreCompileInputs.cache
+d:\Project\graduationProject\WebService.Test\obj\Debug\netcoreapp2.1\WebService.Test.AssemblyInfoInputs.cache
+d:\Project\graduationProject\WebService.Test\obj\Debug\netcoreapp2.1\WebService.Test.AssemblyInfo.cs
+d:\Project\graduationProject\WebService.Test\obj\Debug\netcoreapp2.1\WebService.Test.csproj.CopyComplete
+d:\Project\graduationProject\WebService.Test\obj\Debug\netcoreapp2.1\WebService.Test.dll
+d:\Project\graduationProject\WebService.Test\obj\Debug\netcoreapp2.1\WebService.Test.pdb

@@ -22,17 +22,17 @@
   },
   "targets": {
     ".NETCoreApp,Version=v2.1": {
-      "WebService/1.0.0": {
+      "webservice/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.0"
         },
         "runtime": {
-          "WebService.dll": {}
+          "webservice.dll": {}
         },
         "compile": {
-          "WebService.dll": {}
+          "webservice.dll": {}
         }
       },
       "Microsoft.AspNetCore.Razor.Design/2.1.2": {},
@@ -3150,7 +3150,7 @@
     }
   },
   "libraries": {
-    "WebService/1.0.0": {
+    "webservice/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
