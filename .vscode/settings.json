@@ -6,5 +6,6 @@
           },
           "css": ["css", "scss"],
           "html": ["htm", "html","vue"]
-        }
+        },
+        "debug.node.autoAttach": "on"
 }

@@ -43,6 +43,12 @@
         },
         methods: {
             submitForm() {
+                this.$message("正在执行");
+                this.LoginUser.Login(
+                    ()=>{
+                        this.$message("成功");
+                    }
+                );
             }
         }
     }

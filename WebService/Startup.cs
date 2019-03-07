@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
+
 namespace WebService
 {
     public class Startup
@@ -25,6 +26,15 @@ namespace WebService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(Options =>
+            {
+                Options.AddPolicy("MyCors",
+                builder =>
+                {
+                    builder.WithOrigins("*");
+                });
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -39,6 +49,7 @@ namespace WebService
             {
                 app.UseHsts();
             }
+            app.UseCors("MyCors");
 
             app.UseHttpsRedirection();
             app.UseMvc();

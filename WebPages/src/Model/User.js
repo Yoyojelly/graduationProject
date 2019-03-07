@@ -6,11 +6,11 @@ export default class User{
     }
 
     Login(successFunc) {
-        fetch("localhost:5000/User/Login",{
+        fetch("http://localhost:5000/User/Login",{
             method:"post",
             body:{
-                UserName:this.name,
-                UserPwd:this.pwd
+                UserName:'Fan',
+                UserPwd:'GuoDong'
             }
         })
         .then((res)=>{
