@@ -9,12 +9,13 @@ namespace WebService.Controllers
 {
     [Route("[controller]/[action]")]
     [ApiController]
+    
     public class UserController : ControllerBase
     {
         [HttpPost]
-        public async Task<IActionResult> Login(User user)
+        public User Login([FromBody] User user)
         {
-            return Json(user);
+            return user;
         }
     }
 }

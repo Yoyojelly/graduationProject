@@ -29,10 +29,7 @@ namespace WebService
             services.AddCors(Options =>
             {
                 Options.AddPolicy("MyCors",
-                builder =>
-                {
-                    builder.WithOrigins("*");
-                });
+                policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().AllowCredentials());
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
