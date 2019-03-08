@@ -1,0 +1,14 @@
+/home/fan/Romens/graduationProject/WebService/bin/Debug/netcoreapp2.2/WebService.deps.json
+/home/fan/Romens/graduationProject/WebService/bin/Debug/netcoreapp2.2/WebService.runtimeconfig.json
+/home/fan/Romens/graduationProject/WebService/bin/Debug/netcoreapp2.2/WebService.runtimeconfig.dev.json
+/home/fan/Romens/graduationProject/WebService/bin/Debug/netcoreapp2.2/WebService.dll
+/home/fan/Romens/graduationProject/WebService/bin/Debug/netcoreapp2.2/WebService.pdb
+/home/fan/Romens/graduationProject/WebService/obj/Debug/netcoreapp2.2/WebService.csprojAssemblyReference.cache
+/home/fan/Romens/graduationProject/WebService/obj/Debug/netcoreapp2.2/WebService.csproj.CoreCompileInputs.cache
+/home/fan/Romens/graduationProject/WebService/obj/Debug/netcoreapp2.2/WebService.RazorAssemblyInfo.cache
+/home/fan/Romens/graduationProject/WebService/obj/Debug/netcoreapp2.2/WebService.RazorAssemblyInfo.cs
+/home/fan/Romens/graduationProject/WebService/obj/Debug/netcoreapp2.2/WebService.AssemblyInfoInputs.cache
+/home/fan/Romens/graduationProject/WebService/obj/Debug/netcoreapp2.2/WebService.AssemblyInfo.cs
+/home/fan/Romens/graduationProject/WebService/obj/Debug/netcoreapp2.2/WebService.RazorTargetAssemblyInfo.cache
+/home/fan/Romens/graduationProject/WebService/obj/Debug/netcoreapp2.2/WebService.dll
+/home/fan/Romens/graduationProject/WebService/obj/Debug/netcoreapp2.2/WebService.pdb
