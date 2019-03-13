@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using WebService.Models;
 
 
 namespace WebService
@@ -33,9 +34,11 @@ namespace WebService
                 policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().AllowCredentials());
             });
             services.AddOptions();
-            services.Configure<MySqlOptions>(Configuration.GetSection("MySqlConnectionString"));
-            
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //
+            // services.Configure<MySqlConnector>(Configuration.GetSection("MySqlConnectionString"));
+            services.AddSingleton<IMyFunc<User>,UserFunc>();
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             
         }
 
