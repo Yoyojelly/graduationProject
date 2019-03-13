@@ -19,13 +19,13 @@ namespace WebService.Models
 
         //字符串插值时根据传过来的东西动态生成语句
 
-        public string ToString(string format,IFormatProvider formatProvider)
+        public string ToString(string format, IFormatProvider formatProvider)
         {
             switch (format)
             {
                 case null:
                 case "user_id":
-                    if(this.user_id==null)
+                    if (this.user_id == null)
                     {
                         return "where user_id = '%'";
                     }
@@ -34,7 +34,7 @@ namespace WebService.Models
                         return $"where user_id = '{user_id}'";
                     }
                 case "user_name":
-                    if(this.user_name==null)
+                    if (this.user_name == null)
                     {
                         return "";
                     }
@@ -43,7 +43,7 @@ namespace WebService.Models
                         return $"and user_name = '{user_name}'";
                     }
                 case "user_code":
-                    if(this.user_code==null)
+                    if (this.user_code == null)
                     {
                         return "";
                     }
@@ -52,7 +52,7 @@ namespace WebService.Models
                         return $"and user_code = '{user_code}'";
                     }
                 case "user_pwd":
-                    if(this.user_pwd==null)
+                    if (this.user_pwd == null)
                     {
                         return "";
                     }
@@ -61,7 +61,7 @@ namespace WebService.Models
                         return $"and user_pwd = '{user_pwd}'";
                     }
                 default:
-                throw new FormatException($"invalid format string {format}");
+                    throw new FormatException($"invalid format string {format}");
             }
         }
     }
@@ -80,10 +80,10 @@ namespace WebService.Models
         #endregion
 
         //通过id检索数据
-        public bool SelectById(int id, out User user)
+        public bool SelectById(int id,User user)
         {
             var row = MySqlHelper.ExecuteReader(connectionStr, "select * from user where user_id=" + id);
-            if (ParseRow(row, out user))
+            if (ParseRow(row,user))
             {
                 row.Close();
                 return true;
@@ -96,16 +96,21 @@ namespace WebService.Models
         }
 
         //通过对象来检索数据
-        public bool Select(User user)
+        public bool SingleSelect(User user)
         {
+            //动态生成查询语句，需要User类继承IFormattable接口，并实现ToString方法。
             var row = MySqlHelper.ExecuteReader(connectionStr,
             $"select * from user {user:user_id} {user:user_pwd} {user:user_name} {user:user_code}");
-
-            string str =  $"select * from user {user:user_id} {user:user_pwd} {user:user_name} {user:user_code}";
-
-            ParseRow(row,out var User);
-
-            return false;
+            if (ParseRow(row,user))
+            {
+                row.Close();
+                return true;
+            }
+            else
+            {
+                row.Close();
+                return false;
+            }
         }
 
         ///<summary>
@@ -113,23 +118,18 @@ namespace WebService.Models
         ///把第一行转化成对象并返回给user。（只返回第一行）并将row的指针移动到下一行。
         ///转化成功返回true,转化失败返回false.
         ///</summary>
-        public bool ParseRow(MySqlDataReader row, out User user)
+        public bool ParseRow(MySqlDataReader row,User user)
         {
             if (row.Read())
             {
-                User myUser = new User();
-
-                myUser.user_id = (UInt32)row["user_id"];
-                myUser.user_name = (string)row["user_name"];
-                myUser.user_code = (string)row["user_code"];
-                myUser.user_pwd = (string)row["user_pwd"];
-
-                user = myUser;
+                user.user_id = (UInt32)row["user_id"];
+                user.user_name = (string)row["user_name"];
+                user.user_code = (string)row["user_code"];
+                user.user_pwd = (string)row["user_pwd"];
                 return true;
             }
             else
             {
-                user = new User();
                 return false;
             }
         }

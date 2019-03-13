@@ -28,12 +28,19 @@ namespace WebService.Controllers
         }
 
         [HttpGet]
-        public void Get(int id)
+        public User Get(uint id)
         {
-            User u = new User();
-            u.user_id=1;
-            u.user_code="fan";
-            uf.Select(u);
+            User user = new User();
+            user.user_id=id;
+
+            if(uf.SingleSelect(user))
+            {
+                return user;
+            }
+            else
+            {
+                return null;
+            }
         }
 
     }
