@@ -8,6 +8,16 @@ namespace WebService.Models
 {
     public class User : IFormattable
     {
+        public User(uint? _user_id, string _user_name, string _user_code, string _user_pwd)
+        {
+            user_id = _user_id;
+            user_name = _user_name;
+            user_code = _user_code;
+            user_pwd = _user_pwd;
+        }
+
+        public User() : this(null, null, null, null) { }
+
         //
         public uint? user_id { get; set; }
         //昵称
@@ -64,9 +74,10 @@ namespace WebService.Models
                     throw new FormatException($"invalid format string {format}");
             }
         }
+
     }
 
-    public class UserFunc : IMyFunc<User>
+    public class UserFunc : IMyFunc<User>, IMyParse<User>
     {
         #region 字段和构造函数
         //连接字符串  "Server=(localdb)\\mssqllocalbd;Database=MyWebDb;uid=Fan;pwd=5220349"
@@ -78,12 +89,13 @@ namespace WebService.Models
             connectionStr = "Server=127.0.0.1;Database=MyWebDb;uid=root;pwd=Fan5220349";
         }
         #endregion
-
-        //通过id检索数据
-        public bool SelectById(int id,User user)
+        ///<summary>
+        //通过id检索数据。
+        ///</summary>
+        public bool SelectById(int id, User user)
         {
             var row = MySqlHelper.ExecuteReader(connectionStr, "select * from user where user_id=" + id);
-            if (ParseRow(row,user))
+            if (ParseRow(row, user))
             {
                 row.Close();
                 return true;
@@ -94,14 +106,15 @@ namespace WebService.Models
                 return false;
             }
         }
-
-        //通过对象来检索数据
+        ///<summary>
+        //通过对象来检索数据。
+        ///</summary>
         public bool SingleSelect(User user)
         {
             //动态生成查询语句，需要User类继承IFormattable接口，并实现ToString方法。
             var row = MySqlHelper.ExecuteReader(connectionStr,
             $"select * from user {user:user_id} {user:user_pwd} {user:user_name} {user:user_code}");
-            if (ParseRow(row,user))
+            if (ParseRow(row, user))
             {
                 row.Close();
                 return true;
@@ -114,11 +127,11 @@ namespace WebService.Models
         }
 
         ///<summary>
-        ///把数据行转化成User对象
+        ///把数据行转化成User对象。
         ///把第一行转化成对象并返回给user。（只返回第一行）并将row的指针移动到下一行。
         ///转化成功返回true,转化失败返回false.
         ///</summary>
-        public bool ParseRow(MySqlDataReader row,User user)
+        public bool ParseRow(MySqlDataReader row, User user)
         {
             if (row.Read())
             {
@@ -132,6 +145,31 @@ namespace WebService.Models
             {
                 return false;
             }
+        }
+        ///<summary>
+        ///把数据行转化成集合。
+        ///</summary>
+        public bool ParseRow(MySqlDataReader row, List<User> ls_user)
+        {
+            try
+            {
+                while (row.Read())
+                {
+                    User user = new User(
+                        _user_id: (UInt32)row["user_id"],
+                        _user_name: (string)row["user_name"],
+                        _user_code: (string)row["user_code"],
+                        _user_pwd: (string)row["user_pwd"]
+                    );
+                    ls_user.Add(user);
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
 
     }

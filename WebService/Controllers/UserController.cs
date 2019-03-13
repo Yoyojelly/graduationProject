@@ -18,21 +18,9 @@ namespace WebService.Controllers
         {
             uf = _uf;
         }
-
-
         [HttpPost]
         public User Login([FromBody] User user)
         {
-            
-            return user;
-        }
-
-        [HttpGet]
-        public User Get(uint id)
-        {
-            User user = new User();
-            user.user_id=id;
-
             if(uf.SingleSelect(user))
             {
                 return user;
@@ -42,6 +30,5 @@ namespace WebService.Controllers
                 return null;
             }
         }
-
     }
 }
